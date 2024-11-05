@@ -1,0 +1,129 @@
+/* @settings
+
+name: Theaterpedia Page Types
+id: tp-pages-types
+settings:
+    - 
+        id: tp-paper
+        title: Theaterpedia-Paper
+        type: heading
+        level: 3
+    -
+        id: paper-color
+        title: Paper Color
+        description: Background-Color for light-docs inside dark-theme
+        type: variable-themed-color
+        format: hex
+        opacity: false
+        default-light: '#F5F2E8'    
+        default-dark: '#F5F2E8'    
+    -         
+        id: paper-text-color
+        title: Paper Textcolor
+        description: font-color, caret-/cursor-color
+        type: variable-color
+        format: hex
+        opacity: false
+        default: '#383a42'
+    - 
+        id: block-end-margin
+        title: Block End Margin
+        description: margin after headings, list-blocks
+        type: variable-number-slider
+        format: em
+        step: 0.5
+        default: 0.5
+        min: 0
+        max: 3        
+*/
+
+:root {
+	--paper-text-color: #383a42;
+  --block-end-margin: 0.5em
+}
+
+.theme-light {
+	--paper-color: #F5F2E8;
+}
+
+.theme-dark {
+	--paper-color: #F5F2E8;
+}
+
+.theme-dark .paper {
+  --scrollbar-active-thumb-bg: #BBBBBB;
+  --scrollbar-thumb-bg: #DDDDDD;	
+	--text-normal: var(--paper-text-color);  // cursor / caret-color 
+}
+
+/* TODO: Scrollbar-Variable, Documentation */
+body:not(.native-scrollbars) ::-webkit-scrollbar {
+  width: 12px;
+}
+
+body:not(.native-scrollbars) ::-webkit-scrollbar-thumb {
+  border: 3px solid transparent;
+}
+
+body:not(.native-scrollbars) ::-webkit-scrollbar-thumb:hover,
+body:not(.native-scrollbars) ::-webkit-scrollbar-thumb:active {
+  background-color: var(--scrollbar-active-thumb-bg);
+  border: 3px solid var(--scrollbar-active-thumb-bg);
+}
+
+.paper, .markdown-preview-view.markdown-rendered.paper {
+	background-color: var(--paper-color);
+}
+
+.webpage-container  >  .document-container  > .paper {
+	background-color: var(--paper-color);
+}
+
+.markdown-preview-view.markdown-rendered.paper {
+	background-color: var(--paper-color);
+}
+
+.paper {
+	color: var(--paper-text-color);
+}
+
+.paper th, .paper mark {
+		color: var(--paper-text-color) !important;
+		font-color: var(--paper-text-color) !important;
+}
+
+.paper, .paper .markdown-reading-view, .paper th, .paper mark, .paper .markdown-preview-section {
+	color: var(--paper-text-color) important!;
+	font-color: var(--paper-text-color) important!;
+	--caret-color: var(--paper-text-color);	
+}
+
+/* TODO: integrate with themes, variables */
+body {
+  --line-height-normal: 1.45;
+  --line-height-tight: 1.25;
+}
+
+.markdown-rendered h5, h5, .markdown-rendered h4, h4,
+.markdown-rendered h3, h3, .markdown-rendered h2, h2
+{
+	margin-block-end:var(--block-end-margin);
+}
+
+.markdown-rendered p, .markdown-rendered ul, .markdown-rendered ol {
+  margin-top: 0em;
+  margin-bottom: var(--block-end-margin);
+}
+
+/* TODO: Paper-Callouts (variables ...) */
+.paper .markdown-preview-section .callout[data-callout="info"], .paper div.callout {
+  mix-blend-mode: inherit;
+}
+
+.theme-dark .paper .callout a {
+  color: rgb(2, 122, 255);
+}
+
+.theme-light .markdown-rendered code {
+  color: #222;
+}

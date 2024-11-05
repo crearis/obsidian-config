@@ -1,0 +1,157 @@
+/*
+The CSS snippets below are just my personal preference. 
+You do not need these if you don't want them.
+*/
+
+body {
+  --checklist-done-decoration: none;
+  --link-decoration: none;
+  --link-external-decoration: none;
+}
+
+
+/* -----------------------------
+-----   H1-Formatting ---------*/
+
+:is(.HyperMD-header-1, h1):has(em, .cm-em) > :is(strong, .cm-strong) {
+  font-size: 30px !important;
+}
+:is(.HyperMD-header-1, h1):has(em, .cm-em) > :is(strong, .cm-strong) {
+  font-size: 40px !important;
+}
+:is(.HyperMD-header-1, h1) > :is(strong, .cm-strong) {
+  display: block;
+  font-style: normal;
+  line-height: 1em;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+
+/* Shortcode */
+:is(h2, .HyperMD-header-1) > :is(em, .cm-em) {
+  line-height: 0.76em;
+  font-style: normal;
+  font-weight: 700;
+}
+
+/* Shortcode: editing-view only */
+.HyperMD-header-1 > .cm-em {
+  font-size: 60px !important;
+  margin-right: 4px;  
+}
+
+/* Shortcode: reading-view */
+h2 > em {
+  font-size: 72px !important;
+  float: left;
+  margin-right: 14px;  
+}
+
+/* Tags-Slot */
+/* Tags-Slot: editing-view only*/
+.cm-s-obsidian .HyperMD-header-2 span.cm-highlight {
+	background-color: grey;
+}
+
+:is(h1, .HyperMD-header-1) > :is(mark, .cm-highlight) {
+  --highlight-color-1: grey;
+  font-size: 18px;
+  font-family: Monospace;
+  margin-right: 4px;
+  float: block-start;
+  line-height: 14px;
+  padding-left: 4px;
+  padding-right: 4px;
+  background-color: grey;
+  font-weight: 900;
+}
+
+
+
+/* -----------------------------
+-----   H2-Formatting ---------*/
+
+:is(.HyperMD-header-2, h2) > :is(strong, .cm-strong) {
+  font-size: 24px !important;
+  display: block;
+  font-style: normal;
+  line-height: 1em;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+
+/* Shortcode */
+:is(h2, .HyperMD-header-2) > :is(em, .cm-em) {
+  line-height: 0.76em;
+  font-style: normal;
+  font-weight: 700;
+}
+
+/* Shortcode: editing-view only */
+.HyperMD-header-2 > .cm-em {
+  font-size: 36px !important;
+  margin-right: 4px;  
+}
+
+/* Shortcode: reading-view */
+h2 > em {
+  font-size: 52px !important;
+  float: left;
+  margin-right: 10px;  
+}
+
+/* Tags-Slot */
+/* Tags-Slot: editing-view only*/
+.cm-s-obsidian .HyperMD-header-2 span.cm-highlight {
+	background-color: grey;
+}
+
+:is(h2, .HyperMD-header-2) > :is(mark, .cm-highlight) {
+  --highlight-color-1: grey;
+  font-size: 18px;
+  font-family: Monospace;
+  margin-right: 4px;
+  float: block-start;
+  line-height: 14px;
+  padding-left: 4px;
+  padding-right: 4px;
+  background-color: grey;
+  font-weight: 900;
+}
+
+
+
+/* Card-Display-Style: gelbes Band hinter Subline */
+/* entsteht via Card-H2 */
+
+
+/* Card-default: gelbes Band */
+/* entsteht via Card-H3 */
+:is(.card-display, .cards) :is(.HyperMD-header-3, h3):has(strong, .cm-strong) > :is(strong, .cm-strong) {
+  display: block;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+/* H3-Headline-Formatting / Card: gelbes Band */
+.cards :is(.HyperMD-header-3, h3):has(strong, .cm-strong) > :is(strong, .cm-strong) {
+  font-size: 18px !important;
+
+}
+
+.cards > .heading-wrapper h2 {
+  background-color: red !important;
+  color: red !important;
+  border: 2px solid;
+}
+
+/* H3-Headline-Formatting / Card: gelbes Band */
+.card-display :is(.HyperMD-header-2, h2):has(strong, .cm-strong) > :is(strong, .cm-strong) {
+  font-size: 18px !important;
+  margin-left: 50px;
+  padding-left: 4px;
+  background-color: gold;
+  line-height: 16px;
+}
